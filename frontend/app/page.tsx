@@ -1,15 +1,23 @@
-export default function Home() {
-  return (
-    <main className="flex min-h-screen items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold">
-          VaultPay
-        </h1>
+"use client";
 
-        <p className="mt-4 text-gray-500">
-          Invoice & Payment Management System
-        </p>
-      </div>
-    </main>
-  );
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    if (!token) {
+      router.replace("/login");
+    } else if (role === "admin") {
+      router.replace("/admin");
+    } else {
+      router.replace("/client/dashboard");
+    }
+  }, [router]);
+
+  return null;
 }
