@@ -5,7 +5,7 @@ import api from "@/lib/api";
 import DashboardLayout from "@/components/ui/layout/DashboardLayout";
 import Link from "next/link";
 import {toast} from "sonner";
-import { Loader2 } from "lucide-react";
+
 
 interface Invoice {
   _id: string;

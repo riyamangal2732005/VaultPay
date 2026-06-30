@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DashboardLayout from "@/components/ui/layout/DashboardLayout";
 import api from "@/lib/api";
 import { useRouter } from "next/navigation";
